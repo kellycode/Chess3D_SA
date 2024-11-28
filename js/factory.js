@@ -19,18 +19,13 @@ var textures = {};
 
 function initPieceFactory() {
     // common textures
-    var tiling = 10;
+    var tiling = 1;
     var colors = [];
 
     for (var c = 0; c < 2; c++) {
-        colors[c] = textures["texture/wood-" + c + ".jpg"].clone();
+        colors[c] = textures["texture/marble_" + c + ".png"].clone();
         colors[c].tile(tiling);
     }
-
-    var norm = textures["texture/wood_N.jpg"].clone();
-    norm.tile(tiling);
-    var spec = textures["texture/wood_S.jpg"].clone();
-    spec.tile(tiling);
 
     function createPiece(name, color) {
         var size = (BOARD_SIZE / COLS) * PIECE_SIZE;
@@ -44,8 +39,6 @@ function initPieceFactory() {
             specular: 0xaaaaaa,
             shininess: 60.0,
             map: colors[color],
-            normalMap: norm,
-            specularMap: spec
         });
 
         material.normalScale.set(0.3, 0.3);
@@ -122,7 +115,7 @@ function initPieceFactory() {
 // cells are the squares on the innder board
 function initCellFactory() {
     var materials = [];
-    var tiling = 2;
+    var tiling = 1;
 
     // common textures
     var diff;
@@ -132,7 +125,7 @@ function initCellFactory() {
     spec.tile(tiling);
 
     for (var c = 0; c < 2; c++) {
-        diff = textures["texture/wood-" + c + ".jpg"].clone();
+        diff = textures["texture/wood_" + c + ".jpg"].clone();
         diff.tile(tiling);
 
         //common material
@@ -216,7 +209,7 @@ function createChessBoard(size) {
 
     /// board borders
     var tiling = 6;
-    var wood = textures["texture/wood-0.jpg"].clone();
+    var wood = textures["texture/wood_0.jpg"].clone();
     var spec = textures["texture/wood_S.jpg"].clone();
     var norm = textures["texture/wood_N.jpg"].clone();
     wood.tile(tiling);
@@ -264,10 +257,10 @@ function createFloor(size, chessboardSize) {
 
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set(5.25, 5.25);
+    texture.repeat.set(8.25, 8.25);
 
     // Create a material for the plane
-    const material = new THREE.MeshBasicMaterial({ map: texture, color: 0x0032200, side: THREE.DoubleSide });
+    const material = new THREE.MeshBasicMaterial({ map: texture, color: 0x004400, side: THREE.DoubleSide });
 
     // Create the plane mesh
     const floor = new THREE.Mesh(geometry, material);
@@ -296,7 +289,7 @@ function createValidCellMaterial() {
     spec.tile(tiling);
 
     for (var c = 0; c < 2; c++) {
-        diff = textures["texture/wood-1.jpg"].clone();
+        diff = textures["texture/wood_1.jpg"].clone();
         diff.tile(tiling);
 
         //common material
@@ -326,7 +319,7 @@ function createSelectedMaterial() {
     spec.tile(tiling);
 
     for (var c = 0; c < 2; c++) {
-        diff = textures["texture/wood-1.jpg"].clone();
+        diff = textures["texture/wood_1.jpg"].clone();
         diff.tile(tiling);
 
         //common material

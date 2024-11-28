@@ -24,14 +24,16 @@ var textures = {};
             "3D/glb/pawn.glb",
             "3D/glb/board.glb",
             "3D/glb/innerBoard.glb",
-            "texture/wood-0.jpg",
-            "texture/wood-1.jpg",
+            "texture/wood_0.jpg",
+            "texture/wood_1.jpg",
             "texture/wood_N.jpg",
             "texture/wood_S.jpg",
             "texture/floor.jpg",
             "texture/floor_N.jpg",
             "texture/floor_S.jpg",
             "texture/fakeShadow.jpg",
+            "texture/marble_0.png",
+            "texture/marble_1.png",
         ];
 
         // for loading mesh

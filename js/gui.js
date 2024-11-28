@@ -42,8 +42,8 @@
 			.css("position","absolute")
 			.position({
 				of:$("body"),
-				my:"left top",
-				at:"left top"
+				my:"right-150 top",
+				at:"right top"
 			})
 			.width(150)
 			.attr("id","gui");
