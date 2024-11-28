@@ -95,7 +95,8 @@
 
 		$gui.accordion({
 			header: "p",
-			collapsible: true
+			collapsible: true,
+			active: false
 		});
 	}
 

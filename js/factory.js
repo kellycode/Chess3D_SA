@@ -82,7 +82,7 @@ function initPieceFactory() {
         }
 
         // Piece mesh conflicting (flashy) with the board so moved up a bit
-        mesh.position.y += 0.1;
+        mesh.position.y += 1;
 
         // The reflections only appears on outside cells,
         // and can't see the reflection on the cell it lives on
@@ -104,6 +104,7 @@ function initPieceFactory() {
 
         piece.name = name;
         piece.color = color;
+        piece.position.y += 1;
 
         return piece;
     }
@@ -148,6 +149,9 @@ function initCellFactory() {
 
     // the squares on the board
     function createCell(size, color) {
+        
+
+
         // container for the cell and its reflexion
         var geo = new THREE.PlaneGeometry(size, size);
 
@@ -172,6 +176,7 @@ function initCellFactory() {
         // by default PlaneGeometry is vertical
         cell.rotation.x = -Math.PI / 2;
         cell.color = color;
+
         return cell;
     }
 
@@ -199,13 +204,15 @@ function createChessBoard(size) {
     }
 
     // some fake inner environment color for reflexion
+    // TODO: NOT REALLY NEEDED
     var innerBoard = new THREE.Mesh(
         geometries["3D/glb/innerBoard.glb"],
         new THREE.MeshBasicMaterial({
-            color: 0x783e12,
+            color: 0x000000,
+            side: THREE.DoubleSide
         })
     );
-    innerBoard.scale.set(size, size, size);
+    innerBoard.scale.set(size, size/3.5, size);
 
     /// board borders
     var tiling = 6;
@@ -229,6 +236,7 @@ function createChessBoard(size) {
             normalMap: norm,
             shininess: 60,
             normalScale: new THREE.Vector2(0.2, 0.2),
+            side: THREE.DoubleSide
         })
     );
 

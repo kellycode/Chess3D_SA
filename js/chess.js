@@ -119,7 +119,8 @@ var levels = [
         cameraControls.userZoomSpeed = 1.0;
         // default position behind white
         // (might want to change that according to color selection)
-        camera.position.set(0, 100, 100);
+        // this is changed in gui ~ line 200
+        camera.position.set(0, 150, 100);
 
         // LIGHTING
         // THREE r155 significantly changes lighting. If renderer.useLegacyLights
