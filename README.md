@@ -1,2 +1,2 @@
 # Chess3D_SA
-Continuation of the Chess3D project
+Stand alone continuation of a fork of https://github.com/FrenchYann/Chess3D
